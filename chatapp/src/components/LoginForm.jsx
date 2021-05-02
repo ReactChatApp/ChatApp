@@ -5,7 +5,21 @@ const LoginForm = () => {
     const [password, setPassword]=usestate('');
     const handleSubmit = (e) => {
             e.preventDefault();
+            const authObject = { 'Project-ID': "fdfdf85f-b689-4e7a-8b30-94eb155efd1a", 'User-Name': username, 'User-Secret': password };
+
     }
+    try {
+        await axios.get('https://api.chatengine.io/chats', { headers: authObject });
+  
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+  
+        window.location.reload();
+        setError('');
+      } catch (err) {
+        setError('Oops, incorrect credentials.');
+      }
+    };
     return (
         <div className="wrapper">
           <div className="form">
