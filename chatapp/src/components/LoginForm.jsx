@@ -5,7 +5,7 @@ const LoginForm = () => {
     const [password, setPassword]=usestate('');
     const handleSubmit = (e) => {
             e.preventDefault();
-            const authObject = { 'Project-ID': "fdfdf85f-b689-4e7a-8b30-94eb155efd1a", 'User-Name': username, 'User-Secret': password };
+            const authObject = { 'Project-ID': "fdfdf85f-b689-4e7a-8b30-94eb155efd1a", 'User-Name': username, 'User-Secret': password }
 
     }
     try {
@@ -19,7 +19,7 @@ const LoginForm = () => {
       } catch (err) {
         setError('Oops, incorrect credentials.');
       }
-    };
+    }
     return (
         <div className="wrapper">
           <div className="form">
@@ -37,5 +37,5 @@ const LoginForm = () => {
           </div>
         </div>
     
-      );
-}
+      )
+    }
