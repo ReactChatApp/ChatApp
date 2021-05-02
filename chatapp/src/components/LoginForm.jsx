@@ -3,6 +3,7 @@ import axios from 'axios';
 const LoginForm = () => {
     const [username, setUsername]=usestate('');
     const [password, setPassword]=usestate('');
+    const [error, setError] = useState('');
     const handleSubmit = (e) => {
             e.preventDefault();
             const authObject = { 'Project-ID': "fdfdf85f-b689-4e7a-8b30-94eb155efd1a", 'User-Name': username, 'User-Secret': password }
@@ -17,7 +18,7 @@ const LoginForm = () => {
         window.location.reload();
         setError('');
       } catch (err) {
-        setError('Oops, incorrect credentials.');
+        setError('incorrect credentials.');
       }
     }
     return (
@@ -39,3 +40,5 @@ const LoginForm = () => {
     
       )
     }
+
+export default LoginForm;
